@@ -1,0 +1,21 @@
+{
+  "name": "researchlens",
+  "version": "1.0.0",
+  "description": "ResearchLens — AI-Powered Academic Paper Discovery & Summarization Platform",
+  "author": "Yash Chopade <chopadeyash07@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node backend/index.js",
+    "backend": "cd backend && npm start"
+  },
+  "keywords": [
+    "academic-research",
+    "paper-search",
+    "ai-summary",
+    "groq",
+    "arxiv",
+    "crossref",
+    "pubmed",
+    "semantic-scholar"
+  ]
+}

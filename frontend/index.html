@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResearchLens — Discover Academic Knowledge</title>
+  <meta name="description" content="Search millions of academic papers with AI-powered summaries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <span>ResearchLens</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#" class="nav-link active" data-page="home">Search</a>
+        <a href="#" class="nav-link" data-page="saved">My Library</a>
+        <a href="#" class="nav-link" data-page="history">History</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav-menu-btn" id="menuBtn" title="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" class="mobile-link active" data-page="home">Search</a>
+      <a href="#" class="mobile-link" data-page="saved">My Library</a>
+      <a href="#" class="mobile-link" data-page="history">History</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       PAGE: HOME
+  ═══════════════════════════════════════ -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section class="hero">
+      <!-- Background layers -->
+      <div class="hero-bg">
+        <div class="hero-bg-image"></div>
+        <div class="hero-overlay-1"></div>
+        <div class="hero-overlay-2"></div>
+        <div class="hero-dots"></div>
+      </div>
+
+      <!-- Floating orbs -->
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+
+      <!-- Content -->
+      <div class="hero-content">
+        <div class="hero-badge animate-in delay-0">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          AI-Powered Academic Search
+        </div>
+
+        <h1 class="hero-title animate-in delay-1">
+          Discover <em>Knowledge</em><br>
+          <span class="hero-subtitle-text">Without Limits</span>
+        </h1>
+
+        <p class="hero-desc animate-in delay-2">
+          Search <strong>200 million+</strong> academic papers. Get instant AI summaries.
+          Build your personal research library.
+        </p>
+
+        <!-- Search bar -->
+        <div class="search-wrap animate-in delay-3">
+          <div class="search-box" id="searchBox">
+            <div class="search-glow"></div>
+            <div class="search-inner">
+              <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="Search papers, topics, authors..."
+                autocomplete="off"
+              />
+              <button class="search-btn" id="searchBtn">
+                <span>Search</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Suggestions dropdown -->
+            <div class="suggestions" id="suggestions">
+              <div class="suggestions-label">Trending topics</div>
+              <div class="suggestion-item" data-query="large language models 2024">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Large Language Models 2024
+              </div>
+              <div class="suggestion-item" data-query="climate change solutions">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Climate Change Solutions
+              </div>
+              <div class="suggestion-item" data-query="CRISPR gene editing">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                CRISPR Gene Editing
+              </div>
+              <div class="suggestion-item" data-query="quantum computing algorithms">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Quantum Computing Algorithms
+              </div>
+              <div class="suggestion-item" data-query="cancer immunotherapy">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Cancer Immunotherapy
+              </div>
+              <div class="suggestion-item" data-query="neural network interpretability">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Neural Network Interpretability
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat pills -->
+          <div class="stat-pills animate-in delay-45">
+            <span class="stat-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>200M+ Papers</span>
+            <span class="stat-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>AI Summaries</span>
+            <span class="stat-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>All Disciplines</span>
+            <span class="stat-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Open Access</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" id="scrollHint">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </section>
+
+    <!-- RESULTS / WELCOME SECTION -->
+    <section class="content-section" id="contentSection">
+      <div class="container">
+
+        <!-- Results header (hidden initially) -->
+        <div class="results-header" id="resultsHeader" class="hidden">
+          <div class="results-info">
+            <h2 class="results-title">Results</h2>
+            <p class="results-meta" id="resultsMeta"></p>
+          </div>
+          <div class="results-actions">
+            <span class="badge-relevant">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+              Most Cited First
+            </span>
+            <button class="btn-outline" id="clearSearch">Clear</button>
+          </div>
+        </div>
+
+        <!-- Loading skeletons -->
+        <div class="skeletons" id="skeletons" style="display:none">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <!-- Error state -->
+        <div class="error-state" id="errorState" style="display:none">
+          <div class="state-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Search failed</h3>
+          <p id="errorMsg">Something went wrong. Please try again.</p>
+          <button class="btn-outline" onclick="clearSearch()">Go back</button>
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState" style="display:none">
+          <div class="state-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>No papers found</h3>
+          <p>Try broader keywords or check your spelling.</p>
+        </div>
+
+        <!-- Papers grid -->
+        <div class="papers-grid" id="papersGrid"></div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination" style="display:none">
+          <button class="btn-outline" id="prevBtn" disabled>← Previous</button>
+          <span class="page-info" id="pageInfo">Page 1</span>
+          <button class="btn-outline" id="nextBtn">Next →</button>
+        </div>
+
+        <!-- Welcome state (shown when no search) -->
+        <div class="welcome-state" id="welcomeState">
+
+          <!-- Quick action cards -->
+          <div class="action-cards">
+            <div class="action-card" onclick="triggerSearch('machine learning 2024')">
+              <div class="action-card-icon trending">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <h3>Trending Research</h3>
+              <p>Explore the most cited papers in AI, climate science, and medicine.</p>
+              <span class="action-link">Browse trends →</span>
+            </div>
+            <div class="action-card" onclick="showPage('saved')">
+              <div class="action-card-icon saved">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3>My Library</h3>
+              <p>Your saved papers, organized and always accessible.</p>
+              <span class="action-link">View library →</span>
+            </div>
+            <div class="action-card" onclick="showPage('history')">
+              <div class="action-card-icon history">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3>Search History</h3>
+              <p>Revisit your past searches and rediscover findings.</p>
+              <span class="action-link">View history →</span>
+            </div>
+          </div>
+
+          <!-- Topic pills -->
+          <div class="topics-section">
+            <p class="topics-label">Explore by topic</p>
+            <div class="topic-pills">
+              <button class="topic-pill" onclick="triggerSearch('Artificial Intelligence')">Artificial Intelligence</button>
+              <button class="topic-pill" onclick="triggerSearch('Climate Science')">Climate Science</button>
+              <button class="topic-pill" onclick="triggerSearch('Neuroscience')">Neuroscience</button>
+              <button class="topic-pill" onclick="triggerSearch('Genomics')">Genomics</button>
+              <button class="topic-pill" onclick="triggerSearch('Quantum Physics')">Quantum Physics</button>
+              <button class="topic-pill" onclick="triggerSearch('Drug Discovery')">Drug Discovery</button>
+              <button class="topic-pill" onclick="triggerSearch('Renewable Energy')">Renewable Energy</button>
+              <button class="topic-pill" onclick="triggerSearch('Computer Vision')">Computer Vision</button>
+              <button class="topic-pill" onclick="triggerSearch('Epidemiology')">Epidemiology</button>
+              <button class="topic-pill" onclick="triggerSearch('Robotics')">Robotics</button>
+              <button class="topic-pill" onclick="triggerSearch('Materials Science')">Materials Science</button>
+              <button class="topic-pill" onclick="triggerSearch('Astrophysics')">Astrophysics</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PAGE: SAVED PAPERS
+  ═══════════════════════════════════════ -->
+  <div id="page-saved" class="page">
+    <div class="page-header-section">
+      <div class="container">
+        <h1 class="page-title">My Library</h1>
+        <p class="page-subtitle" id="savedCount">0 saved papers</p>
+      </div>
+    </div>
+    <div class="container page-content-pad">
+      <div class="empty-library" id="emptyLibrary">
+        <div class="state-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Your library is empty</h3>
+        <p>Search for papers and save them to build your collection.</p>
+        <button class="btn-primary" onclick="showPage('home')">Start Searching</button>
+      </div>
+      <div class="papers-grid" id="savedPapersGrid"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PAGE: HISTORY
+  ═══════════════════════════════════════ -->
+  <div id="page-history" class="page">
+    <div class="page-header-section">
+      <div class="container">
+        <h1 class="page-title">Search History</h1>
+        <p class="page-subtitle">Your recent searches</p>
+      </div>
+    </div>
+    <div class="container page-content-pad">
+      <div class="empty-library" id="emptyHistory">
+        <div class="state-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>No search history yet</h3>
+        <p>Your searches will appear here.</p>
+        <button class="btn-primary" onclick="showPage('home')">Start Searching</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       AI SUMMARY MODAL
+  ═══════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose" title="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-subtitle">AI-generated summary & key insights</p>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:16px; padding: 40px 0 32px;">
+
+        <!-- Logo + name -->
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="nav-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+          </div>
+          <span style="font-size:17px; font-weight:700; letter-spacing:-0.3px;">ResearchLens</span>
+        </div>
+
+        <!-- Tagline -->
+        <p style="font-size:13px; opacity:0.5; text-align:center; max-width:420px; margin:0; line-height:1.6;">
+          AI-assisted research paper discovery & analysis — developed by Yash Chopade.
+        </p>
+
+        <!-- Sources -->
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+          <span style="font-size:11px; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.12); opacity:0.55;">arXiv</span>
+          <span style="font-size:11px; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.12); opacity:0.55;">Semantic Scholar</span>
+          <span style="font-size:11px; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.12); opacity:0.55;">CrossRef</span>
+          <span style="font-size:11px; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.12); opacity:0.55;">PubMed</span>
+          <span style="font-size:11px; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.12); opacity:0.55;">CORE</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-sub">
+    <div class="container">
+      <div class="footer-sub-inner">
+        <p class="footer-copy">© 2026 ResearchLens. Created by Yash Chopade. All rights reserved.</p>
+        <span class="footer-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          Powered by Groq AI
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
